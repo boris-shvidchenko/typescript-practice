@@ -1,0 +1,1 @@
+Repo will store TypeScript practice content.
