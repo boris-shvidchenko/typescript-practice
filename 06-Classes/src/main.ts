@@ -14,7 +14,7 @@ class Coder {
     }
 }
 
-// or we can use visibility modifiers o avoid duplication
+// or we can use visibility modifiers to avoid duplication
 
 class Coder2 {
     constructor(public readonly name: string, public music: string, private age: number, protected lang: string) {
