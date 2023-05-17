@@ -1,7 +1,7 @@
 import { CartItemType } from "../context/CartProvider";
 import { ReducerAction } from "../context/CartProvider";
 import { ReducerActionType } from "../context/CartProvider";
-import { ReactElement, ChangeEvent } from 'react';
+import { ReactElement, ChangeEvent, memo } from 'react';
 
 
 type PropsType = {
@@ -10,7 +10,7 @@ type PropsType = {
     REDUCER_ACTIONS: ReducerActionType
 }
 
-export default function CartLineItem({ item, dispatch, REDUCER_ACTIONS }: PropsType) {
+function CartLineItem({ item, dispatch, REDUCER_ACTIONS }: PropsType) {
 
     const img: string = new URL(`../images/${item.sku}.jpg`, import.meta.url).href;
     const lineTotal: number = (item.qty * item.price);
@@ -52,3 +52,12 @@ export default function CartLineItem({ item, dispatch, REDUCER_ACTIONS }: PropsT
 
     return content;
 }
+
+function areItemsEqual({ item: prevItem }: PropsType, { item: nextItem }: PropsType) {
+    return Object.keys(prevItem).every(key => {
+        return prevItem[key as keyof CartItemType] === nextItem[key as keyof CartItemType];
+    })
+}
+
+const MemoizedCartLineItem = memo<typeof CartLineItem>(CartLineItem, areItemsEqual);
+export default MemoizedCartLineItem;
