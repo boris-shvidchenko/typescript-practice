@@ -65,6 +65,7 @@
     justify-content: space-around;
     width: 200px;
     margin: 1.5rem auto;
+    padding-bottom: 3rem;
 }
 
 .footer-link {
@@ -76,4 +77,63 @@
     color: teal;
     text-decoration: underline;
     cursor: pointer;
+}
+
+/* Store */
+.store-main {
+    margin: 1.5rem auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+@media screen and (max-width: 1500px) {
+    .store-main {
+        grid-template-columns: repeat(2, 1fr); 
+    }
+}
+
+@media screen and (max-width: 1000px) {
+    .store-main {
+        grid-template-columns: repeat(1, 1fr); 
+    }
+}
+
+/* Items */
+.item-main {
+    background-color: bisque;
+    width: 450px;
+    height: 300px;
+}
+
+.item-name {
+    font-size: x-large;
+    color: teal;
+    font-weight: bold;
+}
+
+.item-img {
+    width: 400px;
+    height: 250px;
+    object-fit: cover;
+}
+
+.item-price {
+    
+}
+
+@media screen and (max-width: 1000px) {
+
+    .item-main {
+        background-color: bisque;
+        width: auto;
+        height: 400px;
+        margin-bottom: 8rem;
+    }
+
+    .item-img {
+        width: 700px;
+        height: 450px;
+        object-fit: cover;
+    }
 }

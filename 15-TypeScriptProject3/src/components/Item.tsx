@@ -7,10 +7,10 @@ type ItemType = {
 
 export default function Item({ name, img, price }: ItemType) {
     return (
-        <div>
-            <p>{name}</p>
-            <img src={img} alt={'Image of ' + name} />
-            <p>Cost: ${price}</p>
+        <div className='item-main'>
+            <p className='item-name'>{name}</p>
+            <img className='item-img' src={img} alt={'Image of ' + name} />
+            <p className='item-price'>Cost: ${price}</p>
         </div>
     )
 }
