@@ -1,6 +1,10 @@
 export default function Footer() {
     return (
-      <>Footer</>
+      <footer className='footer-main'>
+        <h4>My Store &copy;</h4>
+        <p>|</p>
+        <p className='footer-link'>Jobs</p>
+      </footer>
     )
   }
   
