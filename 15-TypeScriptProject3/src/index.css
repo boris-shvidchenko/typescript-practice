@@ -101,9 +101,16 @@
 
 /* Items */
 .item-main {
-    background-color: bisque;
-    width: 450px;
-    height: 300px;
+    border: 1px solid gray;
+    border-radius: 10px;
+    width: 500px;
+    height: 370px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    box-shadow: 2px 2px 5px rgb(206, 206, 206);
+    background-color: whitesmoke;
 }
 
 .item-name {
@@ -118,22 +125,48 @@
     object-fit: cover;
 }
 
+.item-section {
+    display: flex;
+    align-items: center;
+    width: 400px;
+}
+
 .item-price {
-    
+    flex: 1;
+    font-weight: bold;;
+}
+
+.item-div {
+    width: 220px;
+    height: auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.item-btn {
+    height: 30px;;
+    width: 100px;
+    cursor: pointer;
+    border: none;
+    background-color: teal;
+    color: white;
+    padding: 5px 0;
+}
+
+.item-btn:hover {
+    background-color: darkcyan;
 }
 
 @media screen and (max-width: 1000px) {
 
     .item-main {
-        background-color: bisque;
-        width: auto;
-        height: 400px;
-        margin-bottom: 8rem;
+        width: 650px;
+        height: 450px;
     }
 
     .item-img {
-        width: 700px;
-        height: 450px;
+        width: 500px;
+        height: 350px;
         object-fit: cover;
     }
 }
