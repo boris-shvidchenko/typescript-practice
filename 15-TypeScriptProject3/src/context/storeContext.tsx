@@ -9,7 +9,7 @@ type ItemType = {
   }
   
 type initialStateType = {
-    items: ItemType[];
+    items: ItemType[],
 }
 
 // Initial State
@@ -20,7 +20,7 @@ const initialState: initialStateType = {
 // Action type
 type actionType = {
     type: string,
-    payload: any,
+    payload?: ItemType[] | any,
 }
 
 // Context
@@ -35,7 +35,8 @@ const StoreContext = createContext<{
 function reducer(state: initialStateType, action: actionType) {
     switch (action.type) {
         case 'UPDATE_ITEMS':
-            return {...state, items: action.payload}
+            return {...state, items: [...state.items, action.payload]};
+            // return {...state, count: state.count + 1}; This works, meaning the above return has an issues with how I am adding new data
         default:
             return state;
     }

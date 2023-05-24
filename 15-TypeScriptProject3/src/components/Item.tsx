@@ -14,7 +14,9 @@ export default function Item({ name, img, price }: ItemType) {
 
     // Temporary function
     function displayState() {
-        console.log(state)
+        console.log('1: ', state);
+        dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
+        console.log('2: ', state);
     }
 
     return (
@@ -25,7 +27,7 @@ export default function Item({ name, img, price }: ItemType) {
                 <p className='item-price'>Cost: ${price}</p>
                 <div className='item-div'>
                     <button onClick={displayState} className='item-btn'>Add to cart</button>
-                    <button onClick={displayState} className='item-btn'>Remove</button>
+                    <button className='item-btn'>Remove</button>
                 </div>
             </section>
         </div>
