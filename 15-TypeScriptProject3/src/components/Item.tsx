@@ -5,7 +5,7 @@ type ItemType = {
     name: string, 
     img: string, 
     key: string, 
-    price: number
+    price: number,
 };
 
 export default function Item({ name, img, price }: ItemType) {
@@ -15,23 +15,18 @@ export default function Item({ name, img, price }: ItemType) {
     // Adds item to state
     function addItem() {
 
-        // Plan:
-        // if list with name not in state
-        //      then add list
-        // else 
-        //      then + quantity (last item in list)
+        const itemCheck = state.items.filter(i => i[0] === name);
+        if(itemCheck.length === 0) {
+            dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
+        } else {
+            console.log('item exists in state');
+            const addedQnty = itemCheck[0][3];
+            // dispatch({ type: 'UPDATE_ITEMS', itemCheck:  });
+            console.log(addedQnty);
+        }
 
-        // Remove function will be opposite 
-
-        // state.items.forEach(item => {
-            
-        // });
-        // [ [ name, img, price, qnty ],[] ]
-        // console.log(itemInState);
-        dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
-        
         // For testing 
-        console.log(state);
+        console.log(state.items);
     }
 
     return (

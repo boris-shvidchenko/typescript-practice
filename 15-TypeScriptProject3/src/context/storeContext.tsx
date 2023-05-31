@@ -2,6 +2,7 @@ import { createContext, useReducer } from 'react';
 
 // Initial State Type
 type ItemType = {
+    [key: number]: any;
     name: string, 
     img: string, 
     key: string, 
