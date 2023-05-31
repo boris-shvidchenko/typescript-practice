@@ -19,10 +19,12 @@ export default function Item({ name, img, price }: ItemType) {
         if(itemCheck.length === 0) {
             dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
         } else {
-            console.log('item exists in state');
-            const addedQnty = itemCheck[0][3];
-            // dispatch({ type: 'UPDATE_ITEMS', itemCheck:  });
-            console.log(addedQnty);
+            // Adds one to quantity
+            const newArray = [itemCheck[0][0], itemCheck[0][1], itemCheck[0][2], itemCheck[0][3]++];
+            const indexOfItem: number = state.items.indexOf(itemCheck[0]); 
+            // dispatch({ type: 'UPDATE_ITEMS', payload: [...state.items, state.items[indexOfItem] = newArray] });
+
+            // Next step, update state with new array here, running into issues
         }
 
         // For testing 
