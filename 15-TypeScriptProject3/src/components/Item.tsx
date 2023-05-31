@@ -25,15 +25,29 @@ export default function Item({ name, img, price }: ItemType) {
     }
 
     function removeItem() {
-        // const itemCheck = state.items.filter(i => i[0] === name);
-        // if (itemCheck.length === 0) {
-        //     dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
-        // } else {
-        //     // Adds one to quantity
-        //     const newArray: ItemType | any = [itemCheck[0][0], itemCheck[0][1], itemCheck[0][2], itemCheck[0][3]++];
-        //     const indexOfItem: number = state.items.indexOf(itemCheck[0]); 
-        // }
+        const itemCheck = state.items.filter(i => i[0] === name);
+
+        // Testing
+        console.log(itemCheck);
+        console.log(state.items);
+
+        if (!itemCheck[3]) {
+            if (itemCheck[3] !== 1) {
+                const newArray: ItemType | any = [itemCheck[0][0], itemCheck[0][1], itemCheck[0][2], itemCheck[0][3]--];
+                const indexOfItem: number = state.items.indexOf(itemCheck[0]); 
+            } else {
+                // dispatch here to remove list
+                console.log('here');
+            }
+        } else {
+            return;
+        }
     }
+
+    // Next step: lock quantity change if 0 and remove from state
+    // Add circle with total qnty of all items near cart in header
+
+    // dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
 
     return (
         <div className='item-main'>
