@@ -25,6 +25,7 @@ export default function Item({ name, img, price }: ItemType) {
             // dispatch({ type: 'UPDATE_ITEMS', payload: [...state.items, state.items[indexOfItem] = newArray] });
 
             // Next step, update state with new array here, running into issues
+            // Then, add the remove functionm which is the opposite if this function, also add circle with number of items in cart to cart navigation in header
         }
 
         // For testing 
