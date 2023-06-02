@@ -44,6 +44,24 @@
     cursor: pointer;
 }
 
+.header-cart-count {
+    background-color: orangered;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color:white;
+    position: relative;
+    left: 12px;
+    top: -2px;
+}
+
+.header-div {
+    display: flex;
+}
+
 
 @media screen and (max-width: 900px) {
     

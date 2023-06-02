@@ -8,7 +8,10 @@ export default function Header() {
         </section>
         <section className='header-nav'>
           <Link to='/' className='header-link'>Store</Link>
-          <Link to='/cart' className='header-link'>Cart</Link>
+          <div className='header-div'>
+            <div className='header-cart-count'><span>10</span></div>
+            <Link to='/cart' className='header-link'>Cart</Link>
+          </div>
           <Link to='/careers' className='header-link'>Careers</Link>
         </section>
       </nav>
