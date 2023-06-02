@@ -5,6 +5,7 @@ import Footer from "./components/Footer";
 import Store from "./pages/Store";
 import Cart from "./pages/Cart";
 import Careers from "./pages/Careers";
+import Jobs from "./pages/Jobs";
 // Router
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Context
@@ -19,7 +20,10 @@ export default function App() {
           <Routes>
             <Route path='/' element={<Store />} />
             <Route path='/cart' element={<Cart />} />
-            <Route path='/careers' element={<Careers />} />
+            <Route path='/careers'>
+              <Route index element={<Careers />} />
+              <Route path=':id' element={<Jobs />} /> 
+            </Route>
           </Routes>
           <Footer />
         </main>

@@ -188,3 +188,21 @@
         object-fit: cover;
     }
 }
+
+/* Careers */
+
+.careers-job {
+    margin: 1.5rem 4rem;
+    font-weight: bold;
+    color: #444
+}
+
+.careers-job:hover {
+    color: red;
+    cursor: pointer;
+}
+
+.careers-main {
+    display: flex;
+    flex-direction: column;
+}
