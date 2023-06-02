@@ -11,11 +11,13 @@ type ItemType = {
   
 type initialStateType = {
     items: ItemType[],
+    totalItems: number,
 }
 
 // Initial State
 const initialState: initialStateType = {
     items: [],
+    totalItems: 0,
 }
 
 // Action type
@@ -37,6 +39,10 @@ function reducer(state: initialStateType, action: actionType) {
     switch (action.type) {
         case 'UPDATE_ITEMS':
             return {...state, items: [...state.items, action.payload]};
+        case 'ADD_TOTAL':
+            return {...state, totalItems: action.payload};
+        case 'SUB_TOTAL': 
+            return {...state, totalItems: action.payload};
         default:
             return state;
     }
