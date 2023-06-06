@@ -189,6 +189,21 @@
     }
 }
 
+/* Cart */
+.cart-main {
+    margin: 1.5rem 4rem;
+}
+
+.cart-header {
+    font-weight: bolder;
+    font-size: x-large;
+}
+
+.cart-span {
+    color:darkcyan;
+}
+
+
 /* Careers */
 
 .careers-job {
