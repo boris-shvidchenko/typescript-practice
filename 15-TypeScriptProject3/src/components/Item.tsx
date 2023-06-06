@@ -12,12 +12,23 @@ export default function Item({ name, img, price }: ItemType) {
 
     const {state, dispatch} = useContext(StoreContext);
 
+    function updateTotal() {
+        dispatch({ type: 'INCREASE_TOTAL', payload: state.totalItems + 1 });
+    }
+
     // Adds item to state
     function addItem() {
+        
+        // Testing
+        console.log(state);
+
+        // Updates total items state
+        updateTotal();
+        
         const itemCheck = state.items.filter(i => i[0] === name);
         if (itemCheck.length === 0) {
             dispatch({ type: 'UPDATE_ITEMS', payload: [name, img, price, 1] });
-            dispatch({ type: 'ADD_ITEMS', payload: state.totalItems + 1 });
+            // dispatch({ type: 'ADD_ITEMS', payload: state.totalItems + 1 });
         } else {
             // Adds one to quantity
             const newArray: ItemType | any = [itemCheck[0][0], itemCheck[0][1], itemCheck[0][2], itemCheck[0][3]++];
@@ -28,11 +39,7 @@ export default function Item({ name, img, price }: ItemType) {
     function removeItem() {
         const itemCheck = state.items.filter(i => i[0] === name);
 
-        dispatch({ type: 'SUB_ITEMS', payload: state.totalItems - 1 });
-
-        // Testing
-        // console.log(itemCheck);
-        console.log(state);
+        dispatch({ type: 'DECREASE_TOTAL', payload: state.totalItems - 1 });
 
         if (!itemCheck[3]) {
             if (itemCheck[3] !== 1) {

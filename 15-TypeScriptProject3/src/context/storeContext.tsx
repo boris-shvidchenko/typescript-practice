@@ -39,10 +39,10 @@ function reducer(state: initialStateType, action: actionType) {
     switch (action.type) {
         case 'UPDATE_ITEMS':
             return {...state, items: [...state.items, action.payload]};
-        case 'ADD_TOTAL':
-            return {...state, totalItems: action.payload};
-        case 'SUB_TOTAL': 
-            return {...state, totalItems: action.payload};
+        case 'INCREASE_TOTAL':
+            return {...state, totalItems: state.totalItems + 1};
+        case 'DECREASE_TOTAL':
+            return {...state, totalItems: state.totalItems - 1};
         default:
             return state;
     }

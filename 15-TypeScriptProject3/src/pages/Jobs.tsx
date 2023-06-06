@@ -5,7 +5,7 @@ export default function Jobs() {
 
     const { id } = useParams();
 
-    // Extract infomration 
+    // Extract information 
     const description = careerData.filter(job => job.name === id);
 
     return (
